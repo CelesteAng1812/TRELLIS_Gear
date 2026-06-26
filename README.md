@@ -53,7 +53,7 @@ Download the weights from Hugging Face and replace the base model checkpoints.
  
 ### Step 3 — Run Inference
  
-For the latest version of model, use the notebook **`FYP.ipynb`** instead — it has been updated for Gemma 4 (note: `FYP_Gradio.py` was updated for Gemma 3).
+For the latest version of model, use the notebook **`test.ipynb`** instead — it has been updated for Gemma 4.
 
  
 ### Step 4 — Launch the GUI
