@@ -20,6 +20,8 @@ cd TRELLIS
  
 The fine-tuned model (trained on gear datasets) is available at:
 **[Celesteang/TRELLIS-Gear on Hugging Face](https://huggingface.co/Celesteang/TRELLIS-Gear/tree/main)**
+
+This model was finetuned on the TRELLIS-text-base version of the TRELLIS model.
  
 ### Step 1 — Verify Your Environment
  
@@ -48,11 +50,6 @@ outputs = pipeline.run("A chair looking like a avocado.", ...
 ### Step 2 — Swap in the Fine-Tuned Weights
  
 Download the weights from Hugging Face and replace the base model checkpoints. 
- 
-**Example** — Stage 1 generation model:
-```
-ss_flow_txt_dit_B_16l8_fp16.json
-```
  
 ### Step 3 — Run Inference
  
@@ -104,7 +101,7 @@ Run the training commands from the **Training Setup** section of the TRELLIS REA
 
 ### Step 4 — Swap in Your Trained Weights
 
-Replace the base model checkpoints with your fine-tuned ones. Rename your trained model files to match the base model naming convention so they are picked up automatically.
+Replace the base model checkpoints with your fine-tuned ones. Rename your trained model files to match the base model naming convention so they are picked up automatically. The 
 
 **Example** — Stage 1 generation model:
 ```
@@ -116,3 +113,4 @@ ss_flow_txt_dit_B_16l8_fp16.json
 ## Credits
 
 Built on [TRELLIS](https://github.com/microsoft/TRELLIS) by Microsoft.
+Dataset credit: Sun, Yuewan; Li, Xingang; Sha, Zhenghui (2024). [https://doi.org/10.18738/T8/KV7HON](https://doi.org/10.18738/T8/KV7HON)
