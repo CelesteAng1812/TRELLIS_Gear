@@ -99,6 +99,16 @@ Follow the dataset preparation instructions in `TRELLIS/DATASET.md` to process y
 
 Run the training commands from the **Training Setup** section of the TRELLIS README.
 
+#### Fine-tuning from a checkpoint (instead of training from scratch)
+ 
+Edit `TRELLIS/trellis/trainers/base.py` and set `finetune_ckpt` in the `Trainer` class:
+ 
+```python
+finetune_ckpt={"denoiser": "/path/to/your/checkpoint/checkpoint.pt"},
+```
+ 
+**Note:** `"denoiser"` is the key for `ss_flow_txt_dit_B_16l8_fp16` — other model configs may use a different key name. To find the correct key for your model, check the first table under [Training Setup](https://github.com/microsoft/TRELLIS/tree/main#training-setup) in the TRELLIS README.
+
 
 ### Step 4 — Swap in Your Trained Weights
 
