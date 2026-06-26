@@ -1,6 +1,6 @@
 # TRELLIS-Gear
 
-Fine-tuning [TRELLIS by Microsoft](https://github.com/microsoft/TRELLIS) for text-to-3D generation on custom datasets.
+Fine-tuning [TRELLIS](https://github.com/microsoft/TRELLIS) by Microsoft for text-to-3D gear generation.
 
 ---
 
@@ -67,7 +67,7 @@ SPARSE_ATTN_BACKEND=xformers ATTN_BACKEND=xformers python FYP_Gradio.py
  
 ---
 
-## How to Train (Fine-Tuning on Your Own Dataset)
+## How to Train / Fine-Tune Model
  
 ### Step 1 — Prepare Your Dataset
 
