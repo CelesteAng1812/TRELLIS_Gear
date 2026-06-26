@@ -16,8 +16,13 @@ cd TRELLIS
 
 ---
 
-## Step 1 — Set Up Environment
-
+## How to Run (Using the Fine-Tuned Model)
+ 
+The fine-tuned model (trained on gear datasets) is available at:
+**[Celesteang/TRELLIS-Gear on Hugging Face](https://huggingface.co/Celesteang/TRELLIS-Gear/tree/main)**
+ 
+### Step 1 — Verify Your Environment
+ 
 Run the example script to confirm the environment is working and models are downloading correctly from Hugging Face.
 
 ```bash
@@ -39,10 +44,34 @@ SPARSE_ATTN_BACKEND=xformers ATTN_BACKEND=xformers python example_text.py
 ```python
 outputs = pipeline.run("A chair looking like a avocado.", ...
 ```
+ 
+### Step 2 — Swap in the Fine-Tuned Weights
+ 
+Download the weights from Hugging Face and replace the base model checkpoints. 
+ 
+**Example** — Stage 1 generation model:
+```
+ss_flow_txt_dit_B_16l8_fp16.json
+```
+ 
+### Step 3 — Run Inference
+ 
+For the latest version of model, use the notebook **`FYP.ipynb`** instead — it has been updated for Gemma 4 (note: `FYP_Gradio.py` was updated for Gemma 3).
 
+ 
+### Step 4 — Launch the GUI
+ 
+Start the Gradio interface for interactive inference.
+ 
+```bash
+SPARSE_ATTN_BACKEND=xformers ATTN_BACKEND=xformers python FYP_Gradio.py
+```
+ 
 ---
 
-## Step 2 — Preparing Dataset
+## How to Train (Fine-Tuning on Your Own Dataset)
+ 
+### Step 1 — Prepare Your Dataset
 
 Add your 3D assets and captions to the TRELLIS directory.
 
@@ -62,21 +91,18 @@ TRELLIS/
 | file hash | Gear_00000.stl | your_dataset/Gear_00000.stl | 9 | "The gear is a cylindrical component with..." |
 | file hash | Gear_00001.sil | your_dataset/Gear_00001.stl | 9 | "The gear has 6 modules and 28 teeth..." |
 
----
 
-## Step 3 — Run the Data Pipeline
+### Step 2 — Run the Data Pipeline
 
 Follow the dataset preparation instructions in `TRELLIS/DATASET.md` to process your assets into the format required for training.
 
----
 
-## Step 4 — Train the Model
+### Step 3 — Train the Model
 
 Run the training commands from the **Training Setup** section of the TRELLIS README.
 
----
 
-## Step 5 — Swap in Your Trained Weights
+### Step 4 — Swap in Your Trained Weights
 
 Replace the base model checkpoints with your fine-tuned ones. Rename your trained model files to match the base model naming convention so they are picked up automatically.
 
@@ -84,24 +110,6 @@ Replace the base model checkpoints with your fine-tuned ones. Rename your traine
 ```
 ss_flow_txt_dit_B_16l8_fp16.json
 ```
-
----
-
-## Step 6 — Run Inference
-
-Test your fine-tuned model using `example_text.py` as per Step 1.
-
----
-
-## Step 7 — Launch the GUI
-
-Start the Gradio interface for interactive inference.
-
-```bash
-SPARSE_ATTN_BACKEND=xformers ATTN_BACKEND=xformers python FYP_Gradio.py
-```
-
-For the latest version, use the notebook **`test.ipynb`** — it has been updated for Gemma 4 (note: `FYP_Gradio.py` was built for Gemma 3 / Gemini 2.5 flash).
 
 ---
 
