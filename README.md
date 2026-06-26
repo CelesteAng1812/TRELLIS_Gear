@@ -24,22 +24,21 @@ Run the example script to confirm the environment is working and models are down
 python example_text.py
 ```
 
-> **To change the model**, edit this line in `example_text.py`:
-> ```python
-> TrellisTextTo3DPipeline.from_pretrained("microsoft/TRELLIS-text-xlarge")
-> ```
-> Replace `TRELLIS-text-xlarge` with your desired model variant.
+**To change the model**, edit this line in `example_text.py`:
+```python
+TrellisTextTo3DPipeline.from_pretrained("microsoft/TRELLIS-text-xlarge")
+```
+Replace `TRELLIS-text-xlarge` with your desired model variant.
 
-> **If you encounter attention errors**, run with explicit settings:
-> ```bash
-> SPARSE_ATTN_BACKEND=xformers ATTN_BACKEND=xformers python example_text.py
-> ```
+**If you encounter attention errors**, run with explicit settings:
+```bash
+SPARSE_ATTN_BACKEND=xformers ATTN_BACKEND=xformers python example_text.py
+```
 
-> **To change the generation prompt**, edit the prompt string in `example_text.py`:
-> ```python
-> outputs = pipeline.run(
->     "A chair looking like a avocado.", <---
-> ```
+**To change the generation prompt**, edit the prompt string in `example_text.py`:
+```python
+outputs = pipeline.run("A chair looking like a avocado.", ...
+```
 
 ---
 
