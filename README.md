@@ -19,7 +19,7 @@ cd TRELLIS
 ## How to Run (Using the Fine-Tuned Model)
  
 The fine-tuned model (trained on gear datasets) is available at:
-**[Celesteang/TRELLIS-Gear on Hugging Face](https://huggingface.co/Celesteang/TRELLIS-Gear/tree/main)**
+**[Hugging Face]([https://huggingface.co/Celesteang/TRELLIS-Gear/tree/main](https://huggingface.co/Celeste1812/TRELLIS-Gear/blob/main/README.md))**
 
 This model was finetuned on the TRELLIS-text-base version of the TRELLIS model.
  
