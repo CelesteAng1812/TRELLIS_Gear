@@ -35,7 +35,7 @@ python example_text.py
 ```python
 TrellisTextTo3DPipeline.from_pretrained("microsoft/TRELLIS-text-xlarge")
 ```
-Replace `TRELLIS-text-xlarge` with your desired model variant.
+Replace `TRELLIS-text-xlarge` with `TRELLIS-text-base`.
 
 **If you encounter attention errors**, run with explicit settings:
 ```bash
@@ -50,6 +50,7 @@ outputs = pipeline.run("A chair looking like a avocado.", ...
 ### Step 2 — Swap in the Fine-Tuned Weights
  
 Download the weights from Hugging Face and replace the base model checkpoints. 
+
  
 ### Step 3 — Run Inference
  
@@ -105,8 +106,10 @@ Replace the base model checkpoints with your fine-tuned ones. Rename your traine
 
 **Example** — Stage 1 generation model:
 ```
-ss_flow_txt_dit_B_16l8_fp16.json
+ss_flow_txt_dit_B_16l8_fp16.safetensors
 ```
+
+**Note**: You have to convert the training checkpoint to the safetensor version for inference before replacing base model checkpoints.
 
 ---
 
